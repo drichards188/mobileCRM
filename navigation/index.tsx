@@ -3,15 +3,18 @@ import React from "react";
 import {NavigationContainer} from "@react-navigation/native";
 import Finally from "../components/Finally";
 import {RootStackParamList} from "../types/types";
+import DynamicStyles from "../components/DynamicStyles";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const Navigation = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name="Home" component={Finally} />
-            </Stack.Navigator>
+                <Stack.Navigator
+                initialRouteName='Home'>
+                    <Stack.Screen name="Home" component={Finally}/>
+                    <Stack.Screen name='Styles' component={DynamicStyles}/>
+                </Stack.Navigator>
         </NavigationContainer>
     );
 }

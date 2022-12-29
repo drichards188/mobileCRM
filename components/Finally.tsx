@@ -1,8 +1,9 @@
-import {Image, SafeAreaView, ScrollView, Text, View} from "react-native";
+import {Alert, Button, Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from "react-native";
 import stylesFn from "../styles/finallyStyles";
+import {useNavigation, useRoute} from "@react-navigation/native";
 
 const Finally = () => {
-
+    const {navigate} = useNavigation();
     const styles = stylesFn({fontSize: 12})
 
     return (
@@ -20,6 +21,12 @@ const Finally = () => {
                         <View style={{backgroundColor: 'red'}}>one</View>
                         <View style={{backgroundColor: 'blue'}}>one</View>
                         <View style={{backgroundColor: 'white'}}>one</View>
+                    </View>
+                    <View>
+                        <Button
+                            title="Go to styles"
+                            onPress={() => navigate('Styles')}
+                        />
                     </View>
                 </ScrollView>
             </View>
